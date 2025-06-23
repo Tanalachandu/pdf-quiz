@@ -8,8 +8,8 @@ const app = express();
 // Allow your local frontend to talk, plus any prod domain if needed:
 app.use(cors({
   origin: [
-    "http://localhost:5173",
-    "https://quizgen-xi.vercel.app"
+    "http://localhost:5174",
+    "https://pdf2quiz-chi.vercel.app/"
   ],
   credentials: true,
 }));

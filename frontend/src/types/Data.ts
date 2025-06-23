@@ -1,7 +1,8 @@
 export interface Data {
-    content: string,
-    count: number,
-    level: "easy" | "medium" | "hard",
-    type: "factual" | "conceptual",
-    custom: string
-}
+    content: string;
+    count: number;
+    level: "easy" | "medium" | "hard";
+    type: "mcq" | "true-false"; // Updated type
+    custom: string;
+    timer: number; // Added timer field
+  }

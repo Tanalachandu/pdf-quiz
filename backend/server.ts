@@ -1,10 +1,11 @@
+import dotenv from "dotenv";
+dotenv.config(); // Load environment variables
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import uploadFile from "./routes/uploadFile";
 import generateRouter from "./routes/generate";
 
-dotenv.config(); // Load environment variables
+
 
 const app = express();
 

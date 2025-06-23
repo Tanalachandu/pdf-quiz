@@ -9,7 +9,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5174",
-    "https://pdf2quiz-chi.vercel.app/"
+    "https://pdf2quiz-chi.vercel.app"
   ],
   credentials: true,
 }));

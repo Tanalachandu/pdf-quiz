@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
   const data = req.body;
 
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); // or 2.0 if available
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const result = await model.generateContent(`
 You are an AI that generates quiz questions based on the given content.
 
@@ -18,7 +18,7 @@ Generate exactly ${data.count} ${data.type.toUpperCase()} questions at ${data.le
 
 ${data.content}
 
-${(data.custom) ? `Additional user instruction: ${data.custom}` : ""}
+${data.custom ? `Additional user instruction: ${data.custom}` : ""}
 
 Return your response as a **valid JSON array** containing exactly ${data.count} objects.
 
@@ -28,7 +28,7 @@ Each object must have the following keys:
 - "answer": string (must match one of the options)
 
 Strictly return only the JSON array. Do not include explanations, comments, markdown, or any additional text. Ensure all strings are properly quoted.
-`);
+    `);
 
     const raw = await result.response.text();
     const cleaned = raw.replace(/```json\n?|```/g, "").trim();
